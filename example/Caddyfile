@@ -1,0 +1,6 @@
+forms.example.com
+
+proxy /contact form-contact:3000
+proxy /feedback form-feedback:3000
+
+redir http://example.com

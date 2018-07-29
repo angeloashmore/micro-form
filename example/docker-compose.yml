@@ -1,0 +1,52 @@
+version: '3'
+
+networks:
+  front:
+  back:
+
+services:
+  proxy:
+    image: abiosoft/caddy
+    restart: always
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./Caddyfile:/etc/Caddyfile
+      - ./caddy:/root/.caddy
+    networks:
+      - front
+      - back
+
+  form-contact:
+    image: angeloashmore/micro-form
+    restart: always
+    ports:
+      - 3000:3000
+    environment:
+      - MICRO_FORM_NAME=contact
+      - MICOR_FORM_FIELDS_WHITELIST=name,email,comments
+    networks:
+      - back
+
+  form-feedback:
+    image: angeloashmore/micro-form
+    restart: always
+    ports:
+      - 3000:3000
+    environment:
+      - MICRO_FORM_FORM_NAME=feedback
+      - MICRO_FORM_FIELDS_WHITELIST=name,email,comments
+    networks:
+      - back
+
+  form-sender-amazon-ses:
+    image: angeloashmore/micro-form-sender-amazon-ses
+    restart: always
+    ports:
+      - 3000:3000
+    environment:
+      - MICRO_FORM_AMAZON_SES_KEY=amazon_ses_key
+      - MICRO_FORM_AMAZON_SES_SECRET=amazon_ses_secret
+    networks:
+      - back
