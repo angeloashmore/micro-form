@@ -24,7 +24,7 @@ services:
     ports:
       - 3000:3000
     environment:
-      - MICRO_FORM_NAME=contact
+      - MICRO_FORM_ID=contact
       - MICOR_FORM_FIELDS_WHITELIST=name,email,comments
     networks:
       - back
@@ -35,7 +35,7 @@ services:
     ports:
       - 3000:3000
     environment:
-      - MICRO_FORM_FORM_NAME=feedback
+      - MICRO_FORM_ID=feedback
       - MICRO_FORM_FIELDS_WHITELIST=name,email,comments
     networks:
       - back

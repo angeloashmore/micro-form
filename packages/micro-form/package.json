@@ -1,7 +1,7 @@
 {
   "name": "micro-form",
   "version": "0.1.0",
-  "description": "Form handler for static sites",
+  "description": "Form endpoint microservice",
   "main": "index.js",
   "scripts": {
     "develop": "micro-dev",
