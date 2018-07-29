@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "scripts": {
+    "bootstrap": "yarn && lerna bootstrap",
+    "format": "prettier --write 'packages/*/{,!(node_modules)/**/}*.js'"
+  },
+  "devDependencies": {
+    "lerna": "^3.0.0-rc.0",
+    "prettier": "^1.13.7"
+  }
+}

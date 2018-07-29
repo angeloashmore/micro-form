@@ -1,0 +1,25 @@
+{
+  "name": "micro-form",
+  "version": "0.1.0",
+  "description": "Form handler for static sites",
+  "main": "index.js",
+  "scripts": {
+    "develop": "micro-dev",
+    "start": "micro"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:angeloashmore/micro-form.git"
+  },
+  "author": "Angelo Ashmore",
+  "license": "MIT",
+  "dependencies": {
+    "micro": "^9.3.2",
+    "micro-cors": "^0.1.0",
+    "ramda": "^0.25.0",
+    "urlencoded-body-parser": "^2.0.1"
+  },
+  "devDependencies": {
+    "micro-dev": "^3.0.0"
+  }
+}
